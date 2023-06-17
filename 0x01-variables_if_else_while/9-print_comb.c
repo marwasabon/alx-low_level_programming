@@ -21,7 +21,6 @@ int main(void)
 		for (j = i; j < 10; j++)
 		{
 			putchar(i + '0');
-			putchar(' ');
 			if (i == 9 && j == 9)
 				break;
 		putchar(',');
