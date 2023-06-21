@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet - prints lower case alphabet
+ * print_alphabet_x10 - prints lower case alphabet
  *
  **/
 
@@ -18,7 +18,6 @@
 			{
 				_putchar(c);
 			}
-		
 		_putchar('\n');
 		}
 	}
