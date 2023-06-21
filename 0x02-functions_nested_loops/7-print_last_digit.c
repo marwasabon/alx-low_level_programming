@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>	
+#include <ctype.h>
 /**
  * print_last_digit - prints last digit
  * @n: number to compute last digit for
