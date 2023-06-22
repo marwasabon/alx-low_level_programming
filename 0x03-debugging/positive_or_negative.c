@@ -8,9 +8,9 @@
 	void positive_or_negative(int i)
 {
        	if (i > 0)
-	       	printf("%d is positiven", i);
+	       	printf("%d is positiven\n", i);
 	else if (i < 0)
-		printf("%d is negativen", i);
+		printf("%d is negativen\n", i);
 	else
-		printf("%d is zeron", i);
+		printf("%d is zeron\n", i);
 }
