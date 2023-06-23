@@ -10,7 +10,7 @@
  **/
 	int _isdigit(int c)
 	{
-		int r = _isdigit(c);
+		int r = isdigit(c);
 
 		if (r == 0)
 			return (0);
