@@ -1,22 +1,21 @@
 #include "main.h"
 /**
- * void more_numbers - returns 1 if char is digit
+ * more_numbers - print 0-14
  *
  * Return: nothing
  **/
-	void  more_numbers(void)
+	void more_numbers(void)
+{
+	int i, j;
+
+	for (j = 0; j <= 9; j++)
 	{
-		char i;
-
-		char j;
-
-		for (i = '0'; i < '9'; i++)
+		for (i = 0; i <= 14; i++)
 		{
-			for (j = '0'; j < 13; j++)
-			{
-			_putchar(j);
-			}
-
-		_putchar('\n');
+			if (i > 9)
+				_putchar((i / 10) + '0');
+			_putchar(i % 10 + '0');
 		}
+	_putchar('\n');
 	}
+}
