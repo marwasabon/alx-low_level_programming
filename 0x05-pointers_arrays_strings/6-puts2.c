@@ -1,4 +1,4 @@
-#include "maini.h"
+#include "main.h"
 
 /**
  * puts2 - writes every other character
