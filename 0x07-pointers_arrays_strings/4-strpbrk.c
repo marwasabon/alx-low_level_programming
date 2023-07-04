@@ -12,10 +12,6 @@
 {
 	int i, j, exit;
 
-	if (s == NULL)
-	{
-		return (NULL);
-	}
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; accept[j] != '\0'; j++)
@@ -26,5 +22,5 @@
 			}
 		}
 	}
-	return (&s[i]);
+	return (NULL);
 }
