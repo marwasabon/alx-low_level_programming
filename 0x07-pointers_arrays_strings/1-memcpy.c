@@ -13,7 +13,7 @@
 
 	for (; n > 0; n--)
 	{
-		src[n - 1] = dest[n - 1];
+		dest[n - 1] = src[n - 1];
 	}
 	return (dest);
 }
