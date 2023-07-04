@@ -20,5 +20,8 @@
 			return (&src[i]);
 	}
 	if (src[i] == c)
+	{
 		return (&src[i]);
+	}
 	return (NULL);
+}
