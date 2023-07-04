@@ -15,5 +15,5 @@
 	{
 		s[n - 1] = b;
 	}
-	return( s );
+	return (s);
 }
