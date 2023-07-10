@@ -20,11 +20,11 @@
 		length++;
 	}
 	duplicate = (char *)malloc((length + 1) * sizeof(char));
-        
+
 	if (str == NULL)
-        {
-                return (NULL);
-        }	
+	{
+		return (NULL);
+	}
 	if (duplicate == NULL)
 	{
 		return (NULL);
