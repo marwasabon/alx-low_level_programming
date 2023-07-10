@@ -24,11 +24,16 @@
 	{
 		length++;
 	}
-	duplicate = malloc(INT_MAX);
+	duplicate = (char *)malloc((length + 1) * sizeof(char));
 
-	for (i = 0; i <= length; i++)
+	if (duplicate != NULL)
 	{
-		duplicate[i] = str[i];
+		for (i = 0; i <= length; i++)
+		{
+			duplicate[i] = str[i];
+		}
 	}
+	else
+		return (NULL);
 	return (duplicate);
 }
