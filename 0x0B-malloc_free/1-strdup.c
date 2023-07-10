@@ -19,6 +19,10 @@
 	{
 		return (NULL);
 	}
+        if (duplicate == NULL)
+        {
+                return (NULL);
+        }
 	while (str[length] != '\0')
 	{
 		length++;
