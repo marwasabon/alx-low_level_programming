@@ -15,20 +15,16 @@
 
 	char *duplicate;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 	while (str[length] != '\0')
 	{
 		length++;
 	}
 	duplicate = (char *)malloc((length + 1) * sizeof(char));
 
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-	if (duplicate == NULL)
-	{
-		return (NULL);
-	}
 	for (i = 0; i <= length; i++)
 	{
 		duplicate[i] = str[i];
