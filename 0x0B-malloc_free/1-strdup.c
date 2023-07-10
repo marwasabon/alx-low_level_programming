@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "main.h"
 /**
  * _strdup - returns a pointer.
@@ -23,7 +24,7 @@
 	{
 		length++;
 	}
-	duplicate = malloc((length + 1) * sizeof(char));
+	duplicate = malloc(INT_MAX);
 
 	for (i = 0; i <= length; i++)
 	{
