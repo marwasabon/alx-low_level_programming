@@ -19,15 +19,11 @@
 	{
 		return (NULL);
 	}
-        if (duplicate == NULL)
-        {
-                return (NULL);
-        }
 	while (str[length] != '\0')
 	{
 		length++;
 	}
-	duplicate = (char *)malloc((length + 1) * sizeof(char));
+	duplicate = malloc((length + 1) * sizeof(char));
 
 	for (i = 0; i <= length; i++)
 	{
