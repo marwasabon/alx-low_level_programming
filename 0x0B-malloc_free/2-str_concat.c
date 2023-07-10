@@ -20,11 +20,11 @@
 
 	if (s1 == NULL)
 	{
-		s1 = " ";
+		s1 = (char *)malloc(sizeof(char));
 	}
 	if (s2 == NULL)
 	{
-		s1 = " ";
+		s2 = (char *)malloc(sizeof(char));
 	}
 	while (s2[length2] != '\0')
 	{
