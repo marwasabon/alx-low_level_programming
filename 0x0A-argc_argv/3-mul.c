@@ -16,11 +16,11 @@
 		int num2 = atoi(argv[2]);
 
 		printf("%d\n", num * num2);
+		return (0);
 	}
 	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-	return (0);
 }
