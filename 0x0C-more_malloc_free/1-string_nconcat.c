@@ -25,38 +25,29 @@
  * Return: pointer to dest
  **/
 	char *string_nconcat(char *s1, char *s2, unsigned int n)
-
 {
-	unsigned int i, j, len_s1, len_s2;
+	char *dest;
+	unsigned int size1, size2, i, j;
 
-	char *result;
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
+	if (n > size2 - 1)
+		n = size2 - 1;
 
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
-	len_s1 = _strlen(s1);
-
-	len_s2 = _strlen(s2);
-
-	if (n >= len_s2)
-	{
-		n = len_s2 - 1;
-	}
-	result = malloc((len_s1 + n) * sizeof(char));
-
-	if (result == NULL)
+	dest = (char *)malloc((size1 + n) * sizeof(char));
+	if (dest == NULL)
 		return (NULL);
-	if (len_s1 == 1 && len_s2 == 1)
+	if (size1 == 1 && size2 == 1)
 		return (NULL);
-	for (i = 0; i < len_s1 - 1; i++)
-		result[i] = s1[i];
-	for (j = 0; j <= n ; j++)
+
+	for (i = 0; i < size1 - 1; i++)
+		dest[i] = s1[i];
+
+	for (j = 0; j <= n; j++)
 	{
-		result[i + j] = s2[j];
+		dest[i + j] = s2[j];
 	}
-	result[i + j] = '\0';
-	return (result);
+	dest[i + j] = '\0';
+
+	return (dest);
 }
