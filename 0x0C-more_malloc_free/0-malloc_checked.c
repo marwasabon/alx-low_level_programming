@@ -13,6 +13,10 @@
 {
 	void *ptr;
 
+	if (b <= 0)
+	{
+		exit(98);
+	}
 	ptr = malloc(b * sizeof(void *));
 
 	if (ptr == NULL)
