@@ -6,19 +6,22 @@
 /**
  * malloc_checked  - allocates memory using malloc.
  * @b: the size of the memory to printc
- *
+ * Description: returns the length of a given string
  * Return: Nothing.
  */
 	void *malloc_checked(unsigned int b)
 {
-	void *a;
+	void *ptr;
 
 	if (b <= 0)
 	{
+		exit(98);
 	}
-	a = (void *)malloc(b);
-	if (a == NULL)
+	ptr = malloc(b);
+
+	if (ptr == NULL)
 	{
+		exit(98);
 	}
-	return (a);
+	return (ptr);
 }
