@@ -17,7 +17,7 @@
 	{
 		exit(98);
 	}
-	ptr = malloc(b * sizeof(void *));
+	ptr = malloc(b);
 
 	if (ptr == NULL)
 	{
