@@ -29,12 +29,16 @@
 	char *dest;
 	unsigned int size1, size2, i, j;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	size1 = _strlen(s1);
 	size2 = _strlen(s2);
 	if (n > size2 - 1)
 		n = size2 - 1;
 
-	dest = (char *)malloc((size1 + n) * sizeof(char));
+	dest = (char *)malloc((size1 + n + 1) * sizeof(char));
 	if (dest == NULL)
 		return (NULL);
 	if (size1 == 1 && size2 == 1)
