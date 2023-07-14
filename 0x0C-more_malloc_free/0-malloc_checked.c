@@ -1,17 +1,17 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
+#include <stdio.h>
 
 /**
- * malloc_checked  - allocates memory using malloc.
- * @b: the size of the memory to printc
- * Description: returns the length of a given string
- * Return: Nothing.
+ * malloc_checked - fuction that allocates memory and also checks if sucessful
+ * @b: size of memory to allocate.
+ *
+ * Return: pointer to memory, Else if return exit status 98.
  */
 void *malloc_checked(unsigned int b)
 {
-	void *ptr = malloc(b);
+	void *ptr;
 
+	ptr = malloc(b);
 	if (ptr == NULL)
 	{
 		free(ptr);
@@ -19,3 +19,4 @@ void *malloc_checked(unsigned int b)
 	}
 	return (ptr);
 }
+
