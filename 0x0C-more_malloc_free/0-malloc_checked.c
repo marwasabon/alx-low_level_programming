@@ -9,15 +9,9 @@
  * Description: returns the length of a given string
  * Return: Nothing.
  */
-	void *malloc_checked(unsigned int b)
+void *malloc_checked(unsigned int b)
 {
-	void *ptr;
-
-	if (b <= 0)
-	{
-		exit(98);
-	}
-	ptr = malloc(b);
+	void *ptr = malloc(b);
 
 	if (ptr == NULL)
 	{
