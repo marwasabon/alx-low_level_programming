@@ -1,5 +1,4 @@
-
-#include "calc.h"
+#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define ARGV(X, S) (argv[X][0] == S)
