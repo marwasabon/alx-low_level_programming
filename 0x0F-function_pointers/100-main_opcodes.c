@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 
 	int i;
 
-	int num_bytes = atoi(argv[1]);
+	int num_bytes;
 
 	unsigned char *ptr = (unsigned char *)main;
 
@@ -25,6 +25,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(1);
 	}
+	num_bytes = atoi(argv[1]);
 
 	if (num_bytes < 0)
 	{
