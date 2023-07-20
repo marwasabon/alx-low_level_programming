@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * main - entry point, This fuction perform a calulaction base on 2 numbers and
  * the given operator.
@@ -33,8 +34,7 @@ int main(int argc, char **argv)
 
 	for (i = 0; i < num_bytes; i++)
 	{
-		printf("%02x ", *ptr);
-		ptr++;
+	       	printf("%02x ", ptr[i] &0xff);
 	}
 	printf("\n");
 
