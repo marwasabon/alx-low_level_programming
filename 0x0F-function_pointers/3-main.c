@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	op = argv[2];
 	if ((ARGV(2, '/') || ARGV(3, '%')) && b_int == 0)
 	{
-		printf("Error000\n");
+		printf("Error\n");
 		exit(100);
 	}
 	if (!(get_op_func(op)))
