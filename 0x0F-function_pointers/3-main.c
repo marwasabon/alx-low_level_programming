@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	a_int = atoi(argv[1]);
 	b_int = atoi(argv[3]);
 	op = argv[2];
-	if ((ARGV(2, '/') || ARGV(3, '%')) && b_int == 0)
+	if ((ARGV(2, '/') || ARGV(2, '%')) && b_int == 0)
 	{
 		printf("Error\n");
 		exit(100);
