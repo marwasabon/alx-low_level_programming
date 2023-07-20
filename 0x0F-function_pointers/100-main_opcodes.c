@@ -10,7 +10,8 @@
  */
 
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
 
 	int i;
 
@@ -18,12 +19,24 @@ int main(int argc, char **argv) {
 
 	unsigned char *ptr = (unsigned char *)main;
 
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 
-	for (i = 0; i < num_bytes; i++) {
+	if (num_bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	for (i = 0; i < num_bytes; i++)
+	{
 		printf("%02x ", *ptr);
 		ptr++;
 	}
 	printf("\n");
 
-	return 0;
+	return (0);
 }
