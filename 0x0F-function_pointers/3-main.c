@@ -2,7 +2,7 @@
 #include "calc.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#define ARGV(X, S) (argv[X][0] == S)
 /**
  * main - entry point, This fuction perform a calulaction base on 2 numbers and
  * the given operator.
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	a_int = atoi(argv[1]);
 	b_int = atoi(argv[3]);
 	op = argv[2];
-	if ((ARGV(2, '/') || ARGV(2, '%')) && b_int == 0)
+	if ((ARGV(2, '/') || ARGV(3, '%')) && b_int == 0)
 	{
 		printf("Error000\n");
 		exit(100);
