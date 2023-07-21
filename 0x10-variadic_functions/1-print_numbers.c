@@ -4,7 +4,7 @@
 /**
  * print_numbers - dog object
  * @separator: name of dog
- * @n:
+ * @n: numbers
  **/
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -22,12 +22,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(ap, int));
-		if (i != n - 1)
-		{
-			if (separator == NULL)
-				printf("%d", va_arg(ap, int));
-			printf("%s", separator);
-		}
+		if  (separator == NULL)
+		printf("%d ", va_arg(ap, int));
+		else  if (i != n - 1)
+		printf("%s", separator);
 	}
 	va_end(ap);
 	printf("\n");
