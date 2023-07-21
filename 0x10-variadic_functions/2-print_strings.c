@@ -2,9 +2,9 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 /**
- * print_strings - orint strings
- * @separator: name of dog
- * @n:
+ * print_strings - print strings
+ * @separator: seperates strings
+ * @n: no of strings
  **/
 
 void print_strings(const char *separator, const unsigned int n, ...)
