@@ -11,7 +11,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
 	listint_t *new_node;
 
-	new_noce = create_node(n);
+	new_node = create_node(n);
 
 	if (new_node == NULL)
 	{
@@ -33,7 +33,8 @@ create_node(const int num)
 {
 	listint_t *new_node;
 
-	new_mode = malloc(sizeof(listint_t));
+	new_node = malloc(sizeof(listint_t));
+
 	if (new_node == NULL)
 	{
 		return (NULL);
