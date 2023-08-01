@@ -41,7 +41,7 @@ create_node(const int num)
 	}
 
 	new_node->n = num;
-
-
 	new_node->next = NULL;
+
+	return (new_node);
 }
