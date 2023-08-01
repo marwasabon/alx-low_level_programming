@@ -42,19 +42,19 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 listint_t *add_nodeint(listint_t **head, const int n)
 {
 
-        listint_t *new_node;
+	listint_t *new_node;
 
-        new_node = create_node(n);
+	new_node = create_node(n);
 
-        if (new_node == NULL)
-        {
-                return (NULL);
-        }
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
 
-        new_node->next = *head;
-        *head = new_node;
+	new_node->next = *head;
+	*head = new_node;
 
-        return (new_node);
+	return (new_node);
 }
 /**
  * create_node - creates a int of  linked listint_t list.
@@ -63,17 +63,17 @@ listint_t *add_nodeint(listint_t **head, const int n)
  */
 listint_t *create_node(const int num)
 {
-        listint_t *new_node;
+	listint_t *new_node;
 
-        new_node = malloc(sizeof(listint_t));
+	new_node = malloc(sizeof(listint_t));
 
-        if (new_node == NULL)
-        {
-                return (NULL);
-        }
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
 
-        new_node->n = num;
-        new_node->next = NULL;
+	new_node->n = num;
+	new_node->next = NULL;
 
-        return (new_node);
+	return (new_node);
 }
