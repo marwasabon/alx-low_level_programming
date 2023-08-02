@@ -20,7 +20,7 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		slow_p = slow_p->next;
 		fast_p = fast_p->next->next;
-		printf("%d\n", slow_p->data);
+		printf("%d\n", slow_p->n);
 		count++;
 
 		if (slow_p == fast_p)
