@@ -11,24 +11,19 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int result;
 
-	int power;
-
 	if (!b || !*b)
 		return (0);
 
 
 	result = 0;
-	power = 1;
 
 	while (*b)
 	{
-		if (*b == '1')
-		{
-			result += power;
-		}
-		power *= 2;
+		if (*b != '0' && *b != '1')
+			return (0);
+
+		result = (result * 2) + (*b - '0');
 		b++;
 	}
-
 	return (result);
 }
