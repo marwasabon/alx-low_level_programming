@@ -1,3 +1,6 @@
+#include "main.h"
+#include <limits.h>
+#include <stdio.h>
 /**
  * get_bit - returns the value of a bit at a given index.
  * @index: starting from 0 of the bit you want to get.
