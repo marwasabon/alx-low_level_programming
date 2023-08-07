@@ -15,7 +15,7 @@ create_file(const char *filename, char *text_content)
 {
 	FILE *file;
 
-	if (file == NULL)
+	if (filename == NULL)
 	{
 		return (-1);
 	}
