@@ -12,25 +12,25 @@
 	int
 append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *file;
+	int file;
+
+	ssize_t bytes_written;
 
 	if (filename == NULL)
 		return (-1);
 
-	file = fopen(filename, "w");
-	if (file == NULL)
+	file = open(filename, O_WRONLY | O_APPEND);
+	if (file == -1)
 		return (-1);
-
 	if (text_content != NULL)
 	{
-		if (feof(file))
+		 bytes_written = write(file, text_content, strlen(text_content));
+		if (bytes_written == -1)
 		{
-			fputs(text_content, file);
-
-			fclose(file);
-			return (1);
+			close(file);
+			return (-1);
 		}
 	}
-		fclose(file);
-		return (-1);
+	close(file);
+	return (1);
 }
