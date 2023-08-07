@@ -12,10 +12,12 @@
 	int
 append_text_to_file(const char *filename, char *text_content)
 {
+	FILE *file;
+
 	if (filename == NULL)
 		return (-1);
 
-	FILE *file = fopen(filename, "w");
+	file = fopen(filename, "w");
 	if (file == NULL)
 		return (-1);
 
