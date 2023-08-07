@@ -1,4 +1,8 @@
 #include "main.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 /**
  * read_textfile -  reads a text file and print it to POSIX.
  * @filename: test file to be read.
