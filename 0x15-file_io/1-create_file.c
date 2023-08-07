@@ -25,19 +25,18 @@ create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (!text_content)
-	{
-		file = fopen(filename, "w");
-	}
 	if (chmod(filename, S_IRUSR | S_IWUSR) != 0)
 	{
 		fclose(file);
 		return (-1);
 	}
+	if (text_content != NULL)
+	{
 	if (fputs(text_content, file) == EOF)
 	{
 		fclose(file);
 		return (-1);
+	}
 	}
 	fclose(file);
 	return (1);
