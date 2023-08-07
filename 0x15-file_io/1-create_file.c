@@ -25,7 +25,11 @@ create_file(const char *filename, char *text_content)
 	{
 		file = fopen(filename, "w");
 	}
-
+	if (chmod(filename, S_IRUSR | S_IWUSR) != 0)
+	{
+		fclose(file);
+		return (-1);
+	}
 	if (fputs(text_content, file) == EOF)
 	{
 		fclose(file);
