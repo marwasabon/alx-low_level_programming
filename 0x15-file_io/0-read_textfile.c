@@ -39,7 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	buf[read] = '\0';
-	error = write(STDOUT_FILENO, buf, rd);
+	error = write(STDOUT_FILENO, buf, read);
 	free(buf);
 	fclose(file);
 
