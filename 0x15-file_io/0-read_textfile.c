@@ -14,13 +14,13 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *file;
-	ssize_t read;
+	ssize_t read, error;
 	char *buf;
 
 	if (!filename || !letters)
 		return (0);
 
-	file = fopen(filename, "r");
+	file = fopen(filename, O_RDONLY);
 	if (!file)
 		return (0);
 
@@ -39,12 +39,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	buf[read] = '\0';
-
-	printf("%s", buf);
-
+	error = write(STDOUT_FILENO, buf, rd);
 	free(buf);
 	fclose(file);
 
 	return (read);
 }
-
