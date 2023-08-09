@@ -36,7 +36,7 @@ copy_file(const char *file_from, const char *file_to)
 		exit(99);
 	}
 
-	while (true)
+	while (1)
 	{
 		read_bytes = read(fd1, buffer, 1024);
 		if (!read_bytes)
