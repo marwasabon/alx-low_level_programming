@@ -37,6 +37,12 @@ copy_file(const char *file_from, const char *file_to)
 		exit(99);
 	}
 	read_bytes = read(fd1, buffer, 1024);
+		if (read_bytes < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(98);
+	}
+
 	while (read_bytes > 0)
 	{
 		if (!read_bytes)
