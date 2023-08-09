@@ -31,7 +31,7 @@ copy_file(const char *file_from, const char *file_to)
 	if (fd2 == -1)
 	{
 
-		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 
@@ -74,7 +74,7 @@ main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
