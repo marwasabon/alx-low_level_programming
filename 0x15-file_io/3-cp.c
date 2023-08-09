@@ -18,7 +18,7 @@ copy_file(const char *file_from, const char *file_to)
 
 	int fd1, fd2;
 	FILE *file1;
-	char buffer [1024];
+	char buffer [2048];
 	ssize_t n;
 
 
@@ -31,7 +31,7 @@ copy_file(const char *file_from, const char *file_to)
 	exit (98);
 
 
-	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC| S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH );
+	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	if (fd2 == -1)
 	{
 
@@ -39,8 +39,7 @@ copy_file(const char *file_from, const char *file_to)
 		exit (99);
 	}
 
-
-	n = read(fd1, buffer, 1024);
+    n = read(fileno(file1), buffer, 2048);        
 	while (n > 0) {
 
 		if (write(fd2, buffer, n) != n) {
@@ -48,6 +47,7 @@ copy_file(const char *file_from, const char *file_to)
 			exit(99);
 
 		}
+		        n = read(fileno(file1), buffer, 2048);
 
 	}
 	if (close(fd1) == -1) {
@@ -78,5 +78,5 @@ main (int argc, char *argv[])
 
 	copy_file (file_from, file_to);
 
-	return EXIT_SUCCESS;
+	return (0);
 }
