@@ -16,13 +16,12 @@ copy_file(const char *file_from, const char *file_to)
 {
 
 	int fd1, fd2;
-	FILE *file1;
 	char buffer[1024];
 	ssize_t read_bytes;
 
 	fd1 = 0;
-	fd1 = fopen(file_from, O_RDONLY);
-	if (file1 == NULL)
+	fd1 = open(file_from, O_RDONLY);
+	if (fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
@@ -44,7 +43,7 @@ copy_file(const char *file_from, const char *file_to)
 			exit(99);
 
 		}
-		read_bytes = read(fileno(file1), buffer, 1024);
+		read_bytes = read(fd1, buffer, 1024);
 
 	}
 	if (close(fd1) == -1)
