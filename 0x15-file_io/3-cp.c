@@ -22,6 +22,7 @@ copy_file(const char *file_from, const char *file_to)
 	ssize_t write_bytes;
 
 	fd1 = 0;
+	read_bytes = 1;
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
 	{
@@ -36,7 +37,7 @@ copy_file(const char *file_from, const char *file_to)
 		exit(99);
 	}
 
-	while (1)
+	while (read_bytes > 0)
 	{
 		read_bytes = read(fd1, buffer, 1024);
 		if (!read_bytes)
