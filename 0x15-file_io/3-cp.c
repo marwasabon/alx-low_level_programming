@@ -19,6 +19,8 @@ copy_file(const char *file_from, const char *file_to)
 	char buffer[1024];
 	ssize_t read_bytes;
 
+	ssize_t write_bytes;
+
 	fd1 = 0;
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
@@ -35,9 +37,16 @@ copy_file(const char *file_from, const char *file_to)
 	}
 
 	read_bytes = read(fd1, buffer, 1024);
+	if (!read_bytes)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(98);
+	}
 	while (read_bytes > 0)
 	{
-		if (write(fd2, buffer, read_bytes) != read_bytes)
+		write_bytes = write(fd2,buffer, read_bytes);
+	
+		if (write_bytes != read_bytes)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
