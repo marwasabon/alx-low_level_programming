@@ -36,11 +36,12 @@ copy_file(const char *file_from, const char *file_to)
 		exit(99);
 	}
 
-	read_bytes = read(fd1, buffer, 1024);
-	while (read_bytes > 0)
+	while (true)
 	{
+		read_bytes = read(fd1, buffer, 1024);
+		if (!read_bytes)
+			break;
 		write_bytes = write(fd2, buffer, read_bytes);
-
 		if (write_bytes != read_bytes)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
