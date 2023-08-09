@@ -18,10 +18,10 @@ copy_file(const char *file_from, const char *file_to)
 	int fd1, fd2;
 	FILE *file1;
 	char buffer[1024];
-	ssize_t n;
+	ssize_t read_bytes;
 
 	fd1 = 0;
-	file1 = fopen(file_from, "r");
+	fd1 = fopen(file_from, O_RDONLY);
 	if (file1 == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
@@ -35,16 +35,16 @@ copy_file(const char *file_from, const char *file_to)
 		exit(99);
 	}
 
-	n = read(fileno(file1), buffer, 1024);
-	while (n > 0)
+	read_bytes = read(fd1, buffer, 1024);
+	while (read_bytes > 0)
 	{
-		if (write(fd2, buffer, n) != n)
+		if (write(fd2, buffer, read_bytes) != read_bytes)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 
 		}
-		n = read(fileno(file1), buffer, 1024);
+		read_bytes = read(fileno(file1), buffer, 1024);
 
 	}
 	if (close(fd1) == -1)
