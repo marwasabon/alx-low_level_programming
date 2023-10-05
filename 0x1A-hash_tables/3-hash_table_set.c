@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-
 /**
  * hash_table_set - insert a key, value pair to a hash table.
  * @ht: hash table to insert to.
@@ -7,6 +6,7 @@
  * @value: value to be stored at that key.
  * Return: 1 on SUCCESS otherwise 0
  */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx;
